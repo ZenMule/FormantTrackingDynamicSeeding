@@ -1,0 +1,42 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 4.514829931972789 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "vowel" 
+        xmin = 0 
+        xmax = 4.514829931972789 
+        intervals: size = 7 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.7537885366912722 
+            text = "" 
+        intervals [2]:
+            xmin = 0.7537885366912722 
+            xmax = 0.9506310700380781 
+            text = "e" 
+        intervals [3]:
+            xmin = 0.9506310700380781 
+            xmax = 2.018165410308267 
+            text = "" 
+        intervals [4]:
+            xmin = 2.018165410308267 
+            xmax = 2.2152725491491094 
+            text = "e" 
+        intervals [5]:
+            xmin = 2.2152725491491094 
+            xmax = 3.216891633846521 
+            text = "" 
+        intervals [6]:
+            xmin = 3.216891633846521 
+            xmax = 3.4165600555467663 
+            text = "e" 
+        intervals [7]:
+            xmin = 3.4165600555467663 
+            xmax = 4.514829931972789 
+            text = "" 
