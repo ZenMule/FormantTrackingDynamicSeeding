@@ -34,7 +34,7 @@ One file logs the contextual information such as the previous and subsequent seg
 
 The other file will log in `F1-F4` values from several equidistant intervals of each vowel as specified by the user in the form before running the script. This file will also log four spectral moment: `center of gravity`, `standard deviation`, `skewness` and `kurtosis`.
 
-## The advantage of this script
+## The advantages of this script
 
 1. It's fast. By using this script, it speeds up your process of obtaining data. By setting formant values for gender and different vowels all at once, the users no longer need to repetitively run script for different vowels and different speakers separately.
 2. It's accurate. By setting different formant reference values for different vowels in different tertiles (for vowel sequence), it allows more accurate formant tracking than using one set of formant reference values across time and different vowels.
