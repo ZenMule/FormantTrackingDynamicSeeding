@@ -15,20 +15,8 @@
 # the interval. Otherwise the script will only use one set of reference
 # formant values.
 
-# The user must have three files ready before running the script.
-# The first file is speaker log file, which must have the speaker id as the
-# 1st column, and the speaker's gender as the 2nd column.
-
-# The second file is the vowel reference values. The 1st column should
-# be different labels of vowels, which must match with the labels you used
-# in the TextGrid files to annotate your recordings. The 2nd column is the
-# gender information since the vowel formants change depending on the
-# gender of the speaker. The rest 9 columns are formant reference values of
-# F1-F3 from the initial, medial, and final tertiles of a vowel segment.
-
-# The third file is the formant ceiling and number of tracking formant file.
-# The 1st column is gender, the 2nd column formant ceiling value, and the
-# 3rd column number of formants to track.
+# The user must have three files ready before running the script. Please
+# do read the README file carefully before using the script.
 
 #######################################################################
 

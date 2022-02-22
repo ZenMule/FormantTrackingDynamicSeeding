@@ -18,11 +18,11 @@
 
   3. A `.csv` file that contains the `reference values (F1-F3)` for the vowels you are going to extract formants from in your recordings. The formant reference values should be set for both genders (and children, if there are any).
 
-  This file should have exactly `2+9=11` columns: `vowel`, `gender`, and 9 other columns for `formant reference values`. In your formant reference file you should specify reference F1-F3 values separately for the **initial, medial, and final 33%** of the vowel (3 formants for each tertile, and 9 reference values for each vowel in total). For monophthongs, set the reference values of the initial and final reference values to 0. My script will equate the initial and final reference  to the medial reference values for monophthongs automatically.
+  This file should have exactly `2+9=11` columns: `vowel`, `gender`, and 9 other columns for `formant reference values`. In your formant reference file you should specify reference F1-F3 values separately for the **initial, medial, and final 33%** of the vowel (3 formants for each tertile, and 9 reference values for each vowel in total). For monophthongs, set the reference values of the initial and final reference values to 0. My script will equate the initial and final reference  to the medial reference values for monophthongs automatically. The formant reference file **must contain all the segment labels** you used in your textgrid file, otherwise the script will break once it can't find the target vowel in the formant reference file.
 
 ## How to use
 
-The script allows you to specify another tier (shown as `Syllable tier number` in the form window) that may contain syllable information or other sort. If you don't want to extract additional information from another tier simply set it to `0`.
+The script allows you to specify another tier (shown as `Syllable tier number` in the form window) that may contain syllable information or other sort. If you don't want to extract additional information from another tier, simply set it to `0`.
 
 After running the script, it will first ask you to choose the `speaker log` file, the `formant reference` file and `formant setting` file. Then it will ask you to choose `the folder` where you save your recordings. Note that since the script loops through subdirectories in a folder and look for the subfolder names as speakers' ids, all your recordings should be saved in separate folders for each speaker.
 
