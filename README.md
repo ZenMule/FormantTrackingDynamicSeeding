@@ -1,6 +1,6 @@
 # Formant extracting (dynamic seeding)
 
-  This is a script that incorporates seeding method (Chen et al. 2019)[^1] and dynamic reference values to extract more accurate formants from vocalic segments. This is a Praat script that I wrote to process data of my dissertation: *Prosodic conditions on the acoustics of vowel sequences*.
+  This is a script that incorporates seeding method (Chen et al. 2019)[^1] and dynamic reference values to extract more accurate formants from vocalic segments. I wrote this script to process the data of my dissertation study: *Prosodic conditions on the acoustics of vowel sequences*.
 
   Since my study investigates the formant transition in complex vocalic segments (e.g., diphthongs/triphthongs), the usual method of setting only one set of reference formant values and ignoring the formant change in each vocalic segment is not ideal. Also because there are several different vocalic segments in my recordings (both monophthongs and diphthongs), manually setting formant reference values for each vowel and each speaker is arduous. Therefore, I decided to combine incorporate both seeding method and dynamic formant reference setting into one single Praat script that loops through all files in all subdirectories in a folder, which supposedly should make formant extraction faster and more accurate.
 
@@ -42,12 +42,17 @@ The script will output two files.
 
 One file logs the contextual information, the previous and subsequent segments around the target vowel, the label of the current syllable and the syllable duration.
 
-The other file will log in `F1-F4` values from several equidistant intervals of each vowel as specified by the user in the form before running the script. This file will also log four spectral moments: `center of gravity`, `standard deviation`, `skewness` and `kurtosis`.
+The other file will log in `F1-F4` values (If script was unable to obtain any formant values, the result will be logged as `0`) from several equidistant intervals of each vowel as specified by the user in the form before running the script. This file will also log four spectral moments: `center of gravity`, `standard deviation`, `skewness` and `kurtosis`.
+
+The data will be saved in the long format in the second log file that all data from each individual value tracking interval are saved in one row in the file.
 
 ## The advantages of this script
 
 1. It's fast. By using this script, it speeds up your process of obtaining data. By setting formant values for gender and different vowels all at once, the users no longer need to repetitively run script for different vowels and different speakers separately.
 2. It's accurate. By setting different formant reference values for different vowels in different tertiles (for vowel sequence), it allows more accurate formant tracking than using one set of formant reference values across time and different vowels.
 
+---
+
+### Reference
 
 [^1]: Chen, W. R., Whalen, D. H., & Shadle, C. H. (2019). F 0-induced formant measurement errors result in biased variabilities. The Journal of the Acoustical Society of America, 145(5), EL360-EL366.

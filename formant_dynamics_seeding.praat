@@ -15,8 +15,20 @@
 # the interval. Otherwise the script will only use one set of reference
 # formant values.
 
-# The user must have three files ready before running the script. Please
-# do read the README file carefully before using the script.
+# The user must have three files ready before running the script.
+# The first file is speaker log file, which must have the speaker id as the
+# 1st column, and the speaker's gender as the 2nd column.
+
+# The second file is the vowel reference values. The 1st column should
+# be different labels of vowels, which must match with the labels you used
+# in the TextGrid files to annotate your recordings. The 2nd column is the
+# gender information since the vowel formants change depending on the
+# gender of the speaker. The rest 9 columns are formant reference values of
+# F1-F3 from the initial, medial, and final tertiles of a vowel segment.
+
+# The third file is the formant ceiling and number of tracking formant file.
+# The 1st column is gender, the 2nd column formant ceiling value, and the
+# 3rd column number of formants to track.
 
 #######################################################################
 
@@ -139,7 +151,7 @@ for i_folder from 1 to num_folder
 	selectObject: "Strings fileList"
 	num_file = Get number of strings
 
-	appendInfoLine: "Number of files: < 'num_file' >."
+	#appendInfoLine: "Number of files: < 'num_file' >."
 
   #######################################################################
 
@@ -164,7 +176,7 @@ for i_folder from 1 to num_folder
       #######################################################################
 
 			if label$ <> ""
-				appendInfoLine: "Extracting formants from..."
+				writeInfoLine: "Extracting formants from..."
 				appendInfoLine: "  ", fixed$(i_file/num_file, 0), " Sound file < 'i_file' of 'num_file'>: < 'sound_name$' > of 'speaker_id$'."
 				appendInfoLine: "    Interval ['i_label']: <'label$'>."
 
@@ -419,6 +431,9 @@ for i_folder from 1 to num_folder
     				fileappend 'dir_rec$''log_file_t$'.txt 'f1:0''tab$''f2:0''tab$''f3:0''tab$''f4:0''tab$'
           endif
 
+					selectObject: formant_tracked
+					Remove
+
           #######################################################################
 
   			  #Getting spectral moments
@@ -435,17 +450,31 @@ for i_folder from 1 to num_folder
   				fileappend 'dir_rec$''log_file_t$'.txt 'grav:0''tab$''sdev:0''tab$''skew:0''tab$''kurt:0''newline$'
 
 					# Remove
-					selectObject: formant_tracked
-  				plusObject: chunk_part
+  				selectObject: chunk_part
   				plusObject: spect_part
   				Remove
   			endfor
+
+				# Remove
+				selectObject: formant_burg
+				plusObject: extracted
+				plusObject: table_vowel
+				Remove
 			endif
 		endfor
+
+		# Remove
+		selectObject: sound_file
+		plusObject: textgrid_file
+		Remove
 	endfor
+
+
 	selectObject: "Strings fileList"
 	Remove
+
 endfor
+
 select all
 Remove
 
